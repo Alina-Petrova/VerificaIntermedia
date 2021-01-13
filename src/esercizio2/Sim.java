@@ -59,7 +59,7 @@ public class Sim {
     @Override
     public String toString() {
         String ris = "";
-        ris = "Numero di telefono: "+numeroTelefono+" credito= "+getCredito()+"\n";
+        ris = "Numero di telefono: "+numeroTelefono+" credito= "+getCredito()+" minuti consumati: "+minutiConsumati()+"\n";
         ris += "Lista delle telefonate effettuate:\n";
         for(Telefonata t : listaTelefonate)
             ris += t.toString();
