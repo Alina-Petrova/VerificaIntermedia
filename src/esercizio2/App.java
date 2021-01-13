@@ -19,6 +19,15 @@ public class App {
         elencoSim.add(s);
         s = new Sim("3492345489", 15);
         elencoSim.add(s);
+        Telefonata t = new Telefonata("3424563281", 12);
+        elencoSim.get(0).addTelefonata(t);
+        t = new Telefonata("347654089421", 45);
+        elencoSim.get(0).addTelefonata(t);
+        t = new Telefonata("347654089421", 2);
+        elencoSim.get(1).addTelefonata(t);
         
+        for(Sim sim: elencoSim) {
+            System.out.println(sim.toString());
+        }
     }
 }

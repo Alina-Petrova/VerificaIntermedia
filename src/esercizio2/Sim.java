@@ -7,12 +7,13 @@ package esercizio2;
 
 import java.util.ArrayList;
 
+
 /**
  *
  * @author utente
  */
 public class Sim {
-    private String numeroTelefono;
+    private static String numeroTelefono;
     private float credito;
     private ArrayList<Telefonata> listaTelefonate;
 
@@ -38,7 +39,7 @@ public class Sim {
         listaTelefonate.add(telefonata);
     }
           
-    private int minutiConsumati() {
+    public int minutiConsumati() {
         int ris = 0;
         for(Telefonata t : listaTelefonate) {
             ris += t.getMinuti();
@@ -46,7 +47,7 @@ public class Sim {
         return ris;
     }
     
-    private int telefonateVerso(String numero) {
+    public int telefonateVerso(String numero) {
         int ris = 0;
         for(Telefonata t : listaTelefonate){
             if(t.getNumeroTelefono().equals(numero))
@@ -54,14 +55,16 @@ public class Sim {
         }
         return ris;
     }
-    private String stempaInfoSim() {
+
+    @Override
+    public String toString() {
         String ris = "";
-        ris = "Numero di telefono: "+numeroTelefono+" credito= "+credito+"\n";
+        ris = "Numero di telefono: "+numeroTelefono+" credito= "+getCredito()+"\n";
         ris += "Lista delle telefonate effettuate:\n";
         for(Telefonata t : listaTelefonate)
-            ris += "verso numero "+t.getNumeroTelefono()+" di durata "+t.getMinuti()+"\n";
-        
+            ris += t.toString();
         return ris;
     }
+    
     
 }

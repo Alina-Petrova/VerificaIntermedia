@@ -25,6 +25,11 @@ public class Telefonata {
     public int getMinuti() {
         return minuti;
     }
+
+    @Override
+    public String toString() {
+        return "verso numero " + numeroTelefono + " di durata " + minuti + "\n";
+    }
     
     
 }
