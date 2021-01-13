@@ -5,12 +5,20 @@
  */
 package esercizio2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author utente
  */
 public class App {
+    static ArrayList<Sim> elencoSim = new ArrayList<Sim>();
+    
     public static void main(String[] args) {
+        Sim s = new Sim("3404565432", 0);
+        elencoSim.add(s);
+        s = new Sim("3492345489", 15);
+        elencoSim.add(s);
         
     }
 }

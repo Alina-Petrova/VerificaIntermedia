@@ -11,7 +11,7 @@ package esercizio1;
  */
 
 public class App {
-   // Auto a = new Auto("Audi", 2012, 1000, "benzina", 4);
+
     
     public static void main(String[] args) {
         VeicoloMotore v;
