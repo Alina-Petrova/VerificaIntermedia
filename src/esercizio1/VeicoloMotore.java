@@ -35,9 +35,8 @@ public abstract class VeicoloMotore {
     @Override
     public String toString() {
         String ris = "";
-        System.out.println("Marca: "+getMarca()+" cilindrata: "+getCilindrata()+" dell'anno: "+getAnno());
+        ris = "Marca: "+getMarca()+" cilindrata: "+getCilindrata()+" dell'anno: "+getAnno();
         return ris;
-        //return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
     
     
