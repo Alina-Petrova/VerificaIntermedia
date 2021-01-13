@@ -17,14 +17,12 @@ public class Garage {
     
     
     public static void ImmissioneVeicolo(VeicoloMotore veicolo) {
-        VeicoloMotore v = veicolo;
-        elencoVeicoli.add(v);
+        elencoVeicoli.add(veicolo);
     }
     
     public static VeicoloMotore EstrazioneVeicolo(int index) {
-        VeicoloMotore v = elencoVeicoli.get(index);
         elencoVeicoli.remove(index);
-        return v;           
+        return elencoVeicoli.get(index);           
     }
     
     public static String SituazioneGarage() {
