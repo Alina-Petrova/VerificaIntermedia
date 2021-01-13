@@ -17,18 +17,18 @@ public class App {
         VeicoloMotore v;
         String tipo = "";
         
-        Auto a = new Auto("Audi", 2012, 1000, "benzina", 4);
-        Garage.ImmissioneVeicolo(a);
-        Moto m = new Moto("Honda", 2020, 500, 4);
-        Garage.ImmissioneVeicolo(m);
-        Furgone f = new Furgone("Fiat", 2013, 1500, 85);
-        Garage.ImmissioneVeicolo(f);
-        a = new Auto("Dacia", 2019, 1000, "benzina", 5);
-        Garage.ImmissioneVeicolo(a);
+        Auto a = new Auto(VeicoloMotore.Marca.Audi, 2012, 1000, Auto.Alimentazione.BENZINA, 4);
+        Garage.immissioneVeicolo(a);
+        Moto m = new Moto(VeicoloMotore.Marca.Honda, 2020, 500, 4);
+        Garage.immissioneVeicolo(m);
+        Furgone f = new Furgone(VeicoloMotore.Marca.Fiat, 2013, 1500, 85);
+        Garage.immissioneVeicolo(f);
+        a = new Auto(VeicoloMotore.Marca.Ford, 2019, 1000, Auto.Alimentazione.GPL, 5);
+        Garage.immissioneVeicolo(a);
         
-        System.out.println(Garage.SituazioneGarage());
+        System.out.println(Garage.situazioneGarage());
         
-        v = Garage.EstrazioneVeicolo(1);
+        v = Garage.estrazioneVeicolo(1);
         
         if(v instanceof Auto)
             tipo = "Auto ";
@@ -37,7 +37,7 @@ public class App {
         if(v instanceof Furgone)
             tipo = "Furgone ";
         System.out.println("Uscito "+tipo+v.toString());
-        System.out.println(Garage.SituazioneGarage());
+        System.out.println(Garage.situazioneGarage());
         
     }
 }

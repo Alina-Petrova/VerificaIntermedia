@@ -12,7 +12,7 @@ package esercizio1;
 public class Furgone extends VeicoloMotore{
     private int capienza;
 
-    public Furgone(String marca, int anno, int cilindrata, int capienza) {
+    public Furgone(Marca marca, int anno, int cilindrata, int capienza) {
         super(marca, anno, cilindrata);
         this.capienza = capienza;
     }

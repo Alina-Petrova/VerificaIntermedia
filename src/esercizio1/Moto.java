@@ -12,7 +12,7 @@ package esercizio1;
 public class Moto extends VeicoloMotore {
     private int tempi;
 
-    public Moto(String marca, int anno, int cilindrata, int tempi) {
+    public Moto(Marca marca, int anno, int cilindrata, int tempi) {
         super(marca, anno, cilindrata);
         this.tempi = tempi;
     }

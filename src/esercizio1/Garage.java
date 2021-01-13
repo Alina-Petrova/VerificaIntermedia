@@ -16,16 +16,16 @@ public class Garage {
     
     
     
-    public static void ImmissioneVeicolo(VeicoloMotore veicolo) {
+    public static void immissioneVeicolo(VeicoloMotore veicolo) {
         elencoVeicoli.add(veicolo);
     }
     
-    public static VeicoloMotore EstrazioneVeicolo(int index) {
+    public static VeicoloMotore estrazioneVeicolo(int index) {
         elencoVeicoli.remove(index);
         return elencoVeicoli.get(index);           
     }
     
-    public static String SituazioneGarage() {
+    public static String situazioneGarage() {
         String ris = "";        
         for(VeicoloMotore v: elencoVeicoli) {
             ris += v.toString();

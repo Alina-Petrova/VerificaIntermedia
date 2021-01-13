@@ -10,16 +10,17 @@ package esercizio1;
  * @author utente
  */
 public class Auto extends VeicoloMotore {
-    private String alimentazione;
+    public enum Alimentazione {BENZINA,GPL,METANO,DIESEL};
+    private Alimentazione alimentazione;
     private int numeroPorte;
 
-    public Auto(String marca, int anno, int cilindrata, String alimentazione, int numeroPorte) {
+    public Auto(Marca marca, int anno, int cilindrata, Alimentazione alimentazione, int numeroPorte) {
         super(marca, anno, cilindrata);
         this.alimentazione = alimentazione;
         this.numeroPorte = numeroPorte;
     }
 
-    public String getAlimentazione() {
+    public Alimentazione getAlimentazione() {
         return alimentazione;
     }
 

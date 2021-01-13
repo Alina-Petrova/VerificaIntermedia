@@ -10,17 +10,18 @@ package esercizio1;
  * @author utente
  */
 public abstract class VeicoloMotore {
-    private String marca;
+    public enum Marca {Alfa_Romeo,Audi,Bentley,BMW,Cadillac,Chevrolet,Citroën,Ferrari,Fiat,Ford,Honda,Jaguar,Lexus};
+    private Marca marca;
     private int anno;
     private int cilindrata;
 
-    public VeicoloMotore(String marca, int anno, int cilindrata) {
+    public VeicoloMotore(Marca marca, int anno, int cilindrata) {
         this.marca = marca;
         this.anno = anno;
         this.cilindrata = cilindrata;
     }
 
-    public String getMarca() {
+    public Marca getMarca() {
         return marca;
     }
 
