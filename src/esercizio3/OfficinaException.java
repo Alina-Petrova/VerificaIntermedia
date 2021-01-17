@@ -9,13 +9,12 @@ package esercizio3;
  *
  * @author utente
  */
-public class App {
+public class OfficinaException extends Exception {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public OfficinaException(String message) {
+        super(message);
     }
+
+
     
 }
