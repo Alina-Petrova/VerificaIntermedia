@@ -15,7 +15,15 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            System.out.println("COMINCIAMO");
+            Officina off1 = new Officina(10);
+            
+            
+        } catch (Exception e) {
+            System.out.println("Oops qualcosa è andato storto...");
+        }   
+
     }
     
 }
