@@ -10,21 +10,22 @@ package esercizio3;
  * @author utente
  */
 public class Riparazione {
-    private String nomeRiparazione;
+    public static enum nomeRip {CAMBIO_OLIO,CAMBIO_RUOTA,RIPARAZIONE_CIRCUITO_ELETTRICO,RIPARAZIONE_PARTI_MECCANICI};
+    private nomeRip nomeRiparazione;
     private float costoRiparazione;
 
-    public Riparazione(String nomeRiparazione, float costoRiparazione) {
+    public Riparazione(nomeRip nomeRiparazione, float costoRiparazione) {
         this.nomeRiparazione = nomeRiparazione;
         this.costoRiparazione = costoRiparazione;
     }
     
     
 
-    public String getNomeRiparazione() {
+    public nomeRip getNomeRiparazione() {
         return nomeRiparazione;
     }
 
-    public void setNomeRiparazione(String nomeRiparazione) {
+    public void setNomeRiparazione(nomeRip nomeRiparazione) {
         this.nomeRiparazione = nomeRiparazione;
     }
 
@@ -38,7 +39,7 @@ public class Riparazione {
 
     @Override
     public String toString() {
-        return "Riparazione" + nomeRiparazione + " di costo " + costoRiparazione;
+        return ""+nomeRiparazione + " di costo " + costoRiparazione;
     }
     
     

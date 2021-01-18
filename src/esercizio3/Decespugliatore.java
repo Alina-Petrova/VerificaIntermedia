@@ -12,7 +12,7 @@ package esercizio3;
 public class Decespugliatore extends Macchinario{
     private final boolean accensioneElettrica;
 
-    public Decespugliatore(String marca, boolean accensioneElettrica) {
+    public Decespugliatore(Marca marca, boolean accensioneElettrica) {
         super(marca);
         this.accensioneElettrica = accensioneElettrica;
     }
@@ -26,9 +26,9 @@ public class Decespugliatore extends Macchinario{
         String ris = "";        
         ris += "Decespugliatore con l'accensione ";
         if(accensioneElettrica)
-            ris+="accensione elettrica "+super.toString();
+            ris+="elettrica "+super.toString();
         else
-            ris+="accensione non elettrica "+super.toString();
+            ris+="non elettrica "+super.toString();
         return ris;
     }
     

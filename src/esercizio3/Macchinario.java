@@ -13,14 +13,15 @@ import java.util.List;
  * @author utente
  */
 public abstract class Macchinario {
+    public static enum Marca {HONDA, EINHELL, BENASSI, TACKLIFE, GARDENITALIA};
     static int  index=0;
-    private String marca;
+    private final Marca marca;
     private int idUnic;
     private int numOrdineLavorazione;
     private float costoTotRip=0;
     private List<Riparazione> elencoRiparazioni = new ArrayList<>();
 
-    public Macchinario(String marca) {
+    public Macchinario(Marca marca) {
         this.marca = marca;
         idUnic = ++index;
     }
@@ -29,7 +30,7 @@ public abstract class Macchinario {
         return idUnic;
     }
 
-    public String getMarca() {
+    public Marca getMarca() {
         return marca;
     }
 
@@ -49,20 +50,15 @@ public abstract class Macchinario {
     @Override
     public String toString() {
         String ris = "";
-        ris += "Macchinario targa " + idUnic + "di marca " + marca + ", ordine lavorazione "+ numOrdineLavorazione+"\n";
+        ris += "Macchinario targa " + idUnic + " di marca " + marca + ", ordine lavorazione "+ numOrdineLavorazione+"\n";
         if(elencoRiparazioni.size()>0) {
-            ris += "Precedentemente ha subito seguenti reparazioni:\n";
+            ris += "Tutte le riparazioni:\n";
             for(Riparazione r : elencoRiparazioni)
                 ris += r.toString() + "\n";
-        }        
+        }  
+        ris += "Costo totale delle riparazioni= "+costoTotRip+"\n";
         return ris;
     }
     
-   /* public float costoTotRip() {
-        float ris=0;
-        for(Riparazione r : elencoRiparazioni)
-            ris += r.getCostoRiparazione();
-        return ris;    
-    }*/
-    
+
 }

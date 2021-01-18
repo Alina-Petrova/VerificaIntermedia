@@ -12,7 +12,7 @@ package esercizio3;
 public class Tosaerba extends Macchinario{
     private final int numRuote;
 
-    public Tosaerba(String marca, int numRuote) {
+    public Tosaerba(Marca marca, int numRuote) {
         super(marca);
         this.numRuote = numRuote;
     }
@@ -24,7 +24,7 @@ public class Tosaerba extends Macchinario{
     @Override
     public String toString() {
         String ris = "";
-        ris += "Tosaerba a "+ numRuote+" ruote."+super.toString();
+        ris += "Tosaerba a "+ numRuote+" ruote. "+super.toString();
         return ris;
     }
     

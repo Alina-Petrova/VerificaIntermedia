@@ -13,6 +13,7 @@ import java.util.List;
  * @author utente
  */
 public class Officina {
+    
     private static int numLavorazione=0;
     private final int numPosti;
     private final List<Macchinario> officina;
@@ -24,26 +25,27 @@ public class Officina {
         init();
     }
     
-    public void enter(Macchinario m, String nomeRiparazione, float costoLavorazione) {
+    public void enter(Macchinario m, Riparazione r) {
         if(postoLibero() == -1){
             coda.add(m);
+            m.addRip(r);
         }
         else {
             m.setNumOrdineLavorazione(++numLavorazione);
-            Riparazione r = new Riparazione(nomeRiparazione, costoLavorazione);
             m.addRip(r);
             officina.set(postoLibero(),m);
         }   
     }
     
     public void exit(int n) throws OfficinaException {
-        if(n >= this.numPosti || officina.get(n) == null)
+        if(n <1 || n > this.numPosti || officina.get(n-1) == null)
             throw new OfficinaException("Il posto non esiste oppure è vuoto");
         if(coda.size()>0) {
-            officina.set(n, coda.get(0));
+            coda.get(0).setNumOrdineLavorazione(++numLavorazione);
+            officina.set(n-1, coda.get(0));
             coda.remove(0);
         } else {
-            officina.set(n,null);
+            officina.set(n-1,null);
         }                 
     }
     
@@ -56,4 +58,19 @@ public class Officina {
         return officina.indexOf(null);
     }
     
+    public void situazioneOfficina() {
+         for (int i = 0; i < officina.size(); i++) {
+            if (officina.get(i) != null) {
+                System.out.println("--------------- POSTO " + (i+1) + "------------------");
+                System.out.println(officina.get(i).toString());
+                System.out.println("---------------------------------");
+                System.out.println();
+            }else {
+                System.out.println("--------------- POSTO " + (i+1) + "------------------");
+                System.out.println("--------------- LIBERO ---------------");
+                System.out.println(); 
+            }
+                
+        }
+    }
 }

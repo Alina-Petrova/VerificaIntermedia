@@ -13,7 +13,7 @@ public class Motozappa extends Macchinario {
     
     private final int numRuote;
 
-    public Motozappa(String marca,  int numRuote) {
+    public Motozappa(Marca marca,  int numRuote) {
         super(marca);
         this.numRuote = numRuote;
     }
@@ -25,7 +25,7 @@ public class Motozappa extends Macchinario {
     @Override
     public String toString() {
         String ris = "";
-        ris += "Motozappa a "+ numRuote+" ruote."+super.toString();
+        ris += "Motozappa a "+ numRuote+" ruote. "+super.toString();
         return ris;
     }
     
