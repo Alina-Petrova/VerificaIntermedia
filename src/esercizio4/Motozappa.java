@@ -5,7 +5,6 @@
  */
 package esercizio4;
 
-import esercizio3.*;
 
 /**
  *

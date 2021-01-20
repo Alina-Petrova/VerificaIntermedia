@@ -74,6 +74,21 @@ public class App {
             
             off1.situazioneOfficina();
             
+            off1.exit(4);
+            off1.exit(5);
+            
+            System.out.println("------------Si è liberato il posto 4 e 5-------------\n");
+            off1.situazioneOfficina();
+            
+            r = new Riparazione(Riparazione.nomeRip.CAMBIO_OLIO,12);
+            off1.enter(m1, r);
+            r = new Riparazione(Riparazione.nomeRip.CAMBIO_RUOTA, 14);
+            off1.enter(d4, r);
+            
+            System.out.println("------------Sono entrati per la seconda volta targa 1 e targa 11-------------\n");
+            
+            off1.situazioneOfficina();
+            
             
         } catch (Exception e) {
             System.out.println("Oops qualcosa è andato storto...");

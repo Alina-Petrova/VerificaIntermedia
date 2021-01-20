@@ -7,6 +7,7 @@ package esercizio2;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 
 /**
@@ -16,7 +17,7 @@ import java.util.Collections;
 public class Sim {
     private final String numeroTelefono;
     private float credito;
-    private ArrayList<Telefonata> listaTelefonate;
+    private List<Telefonata> listaTelefonate;
 
     public Sim(String numeroTelefono, float credito) {
         this.numeroTelefono = numeroTelefono;
@@ -32,7 +33,7 @@ public class Sim {
         return credito;
     }
 
-    public ArrayList<Telefonata> getListaTelefonate() {
+    public List<Telefonata> getListaTelefonate() {
         return Collections.unmodifiableList(listaTelefonate);
     }
     
