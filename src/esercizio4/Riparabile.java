@@ -14,5 +14,5 @@ public interface Riparabile {
     public void setNumOrdineLavorazione(int numOrdineLavorazione);
     public void addRip(Riparazione r);
     public int getNumOrdineLavorazione(); 
-    
+    public float getCostoTotRip();
 }

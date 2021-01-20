@@ -20,7 +20,7 @@ public abstract class Macchinario implements Riparabile{
     private int idUnic;
     private int numOrdineLavorazione;
     private float costoTotRip=0;
-    private HashMap<Riparazione,Integer> elencoRiparazioni = new HashMap<Riparazione,Integer>();
+    private final HashMap<Riparazione,Integer> elencoRiparazioni = new HashMap<Riparazione,Integer>();
 
     public Macchinario(Marca marca) {
         this.marca = marca;
@@ -35,15 +35,23 @@ public abstract class Macchinario implements Riparabile{
         return marca;
     }
 
+    @Override
+    public float getCostoTotRip() {
+        return costoTotRip;
+    }
+    
+    @Override
     public void setNumOrdineLavorazione(int numOrdineLavorazione) {
         this.numOrdineLavorazione = numOrdineLavorazione;
     }
 
+    @Override
     public void addRip(Riparazione r) {
         elencoRiparazioni.put(r,numOrdineLavorazione);
         costoTotRip += r.getCostoRiparazione();
     }
-    
+  
+    @Override
     public int getNumOrdineLavorazione() {
         return numOrdineLavorazione;
     }

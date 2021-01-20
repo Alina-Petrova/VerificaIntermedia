@@ -17,7 +17,7 @@ public class Riparazione {
     
     //public HashMap<nomeRip,Integer> elencoRiparazioni = new HashMap<nomeRip,Integer>();
     
-    private nomeRip nomeRiparazione;
+    private final nomeRip nomeRiparazione;
     private float costoRiparazione;
 
     public Riparazione(nomeRip nomeRiparazione, float costoRiparazione) {
@@ -31,9 +31,6 @@ public class Riparazione {
         return nomeRiparazione;
     }
 
-    public void setNomeRiparazione(nomeRip nomeRiparazione) {
-        this.nomeRiparazione = nomeRiparazione;
-    }
 
     public float getCostoRiparazione() {
         return costoRiparazione;
