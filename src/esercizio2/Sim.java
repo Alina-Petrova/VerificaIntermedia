@@ -37,6 +37,11 @@ public class Sim {
         return Collections.unmodifiableList(listaTelefonate);
     }
     
+    public void addTelefonata(String destinatario,int durata) {
+        addTelefonata(new Telefonata(destinatario,durata));
+    }
+    // overload di addTelefonata //
+    
     public void addTelefonata(Telefonata telefonata) {
         listaTelefonate.add(telefonata);
     }
