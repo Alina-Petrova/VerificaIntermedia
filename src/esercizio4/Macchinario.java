@@ -6,6 +6,7 @@
 package esercizio4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ public abstract class Macchinario implements Riparabile{
     private int idUnic;
     private int numOrdineLavorazione;
     private float costoTotRip=0;
-    private List<Riparazione> elencoRiparazioni = new ArrayList<>();
+    private HashMap<Riparazione,Integer> elencoRiparazioni = new HashMap<Riparazione,Integer>();
 
     public Macchinario(Marca marca) {
         this.marca = marca;
@@ -39,7 +40,7 @@ public abstract class Macchinario implements Riparabile{
     }
 
     public void addRip(Riparazione r) {
-        elencoRiparazioni.add(r);
+        elencoRiparazioni.put(r,numOrdineLavorazione);
         costoTotRip += r.getCostoRiparazione();
     }
     
@@ -53,8 +54,8 @@ public abstract class Macchinario implements Riparabile{
         ris += "Macchinario targa " + idUnic + " di marca " + marca + ", ordine lavorazione "+ numOrdineLavorazione+"\n";
         if(elencoRiparazioni.size()>0) {
             ris += "Tutte le riparazioni:\n";
-            for(Riparazione r : elencoRiparazioni)
-                ris += r.toString() + "\n";
+            for(Riparazione r : elencoRiparazioni.keySet())
+                ris += r.toString() + " ordine lavorazione " + elencoRiparazioni.get(r) + "\n";
         }  
         ris += "Costo totale delle riparazioni= "+costoTotRip+"\n";
         return ris;
