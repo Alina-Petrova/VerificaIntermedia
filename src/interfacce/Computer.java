@@ -11,7 +11,12 @@ import java.util.Objects;
  *
  * @author utente
  */
-public class Computer implements Ordinabile<Computer>{
+public class Computer implements Ordinabile<Computer>, Comparable<Computer>{
+
+    @Override
+    public int compareTo(Computer o) {
+        return confronta(o);
+    }
     private final String marca;
     private final int ram;
 
